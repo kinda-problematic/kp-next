@@ -104,7 +104,7 @@ export default async function Collections() {
             key={e.title}
             className={
               e.bgImage +
-              " rounded-3xl group shadow-glowy-sm hover:shadow-glowy-md mb-10 transition-shadow ease-in-out duration-75"
+              " rounded-3xl group shadow-glowy-sm hover:shadow-glowy-md mb-10 transition-all ease-in-out duration-100"
             }
           >
             <Card
