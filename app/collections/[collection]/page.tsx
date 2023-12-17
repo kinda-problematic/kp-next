@@ -65,10 +65,7 @@ const getData = async (collection: string) => {
 
 export default async function Collection({ params }: CollectionProps) {
   const data = await getData(params.collection);
-  const collectionNormalized =
-    params.collection.split("-").join(" ") === "social media"
-      ? "viral vibes"
-      : params.collection.split("-").join(" ");
+  const collectionNormalized = params.collection.split("-").join(" ");
 
   return (
     <div className="bg-gradient-to-tr from-cyan-600 to-emerald-700 -mr-14 -ml-14 -mt-14 pb-20 min-h-screen">

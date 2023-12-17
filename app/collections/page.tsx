@@ -3,7 +3,6 @@ import stripe from "@/config/stripe";
 import { ProductCard } from "@/components/ProductCard";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
