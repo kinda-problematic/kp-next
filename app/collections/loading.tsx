@@ -10,8 +10,8 @@ export default function Loading({
       <div
         className={
           `${
-            params.collection
-              ? 'after:content-["' + params.collection + '"] '
+            params?.collection
+              ? 'after:content-["' + params?.collection + '"] '
               : 'after:content-["COLLECTIONS"] '
           }` +
           bebas_neue.className +
