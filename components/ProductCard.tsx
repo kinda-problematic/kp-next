@@ -87,6 +87,7 @@ export const ProductCard = ({ product }: { product: any }) => {
             src={product.metadata.hover_image}
             alt={product.name}
             layout="fill"
+            priority={true}
             sizes="(max-width: 210px)"
             className="rounded-md"
           />
