@@ -78,6 +78,7 @@ export const ProductCard = ({ product }: { product: any }) => {
             src={product.images[0]}
             alt={product.name}
             layout="fill"
+            priority={true}
             sizes="(max-width: 210px)"
             className="rounded-md"
           />
