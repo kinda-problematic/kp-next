@@ -41,7 +41,7 @@ export const ALTER_NAV_ITEMS_CATEGORIES: AlterNavLink[] = [
   },
   {
     title: "t-shirts",
-    href: "/categories/t-shirts",
+    href: "/categories/t-shirt",
     description:
       "Primed for comfort and style, our t-shirts will get you right.",
   },
