@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -9,63 +9,63 @@
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
- 
+
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
- 
+
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
- 
+
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
- 
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
- 
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
- 
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
- 
+
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
- 
+
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
- 
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
- 
+
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
- 
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
- 
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
- 
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
- 
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -73,4 +73,88 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 60% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseAnimation {
+  0%,
+  100% {
+    background-size: 100% 100%;
+    background-position: 50%;
+  }
+  50% {
+    background-size: 150% 150%;
+    background-position: 50%;
+  }
+}
+
+@keyframes rotateAnimation {
+  50% {
+    background: conic-gradient(#f36196, #f36196, #deb1a6, #deb1a6);
+  }
+  100% {
+    background: conic-gradient(#f36196, #deb1a6, #deb1a6, #f36196);
+  }
+}
+
+@keyframes shiftAnimation {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-background {
+  background: radial-gradient(#f36196, #414141);
+  background-size: 200% 200%;
+  animation: moveBackground 10s ease infinite;
+}
+
+.itm-background {
+  background: radial-gradient(#f36196, #414141);
+}
+
+.kp-background {
+  background: conic-gradient(#deb1a6, #f36196, #f36196, #deb1a6);
+}
+
+.sm-background {
+  background: linear-gradient(60deg, #00e5ee, #f36196, #5e5687);
+}
+
+.text-shadow::before {
+  content: "";
+  position: absolute;
+  z-index: -1; /* Place the shadow behind the content. */
+  width: 100%; /* Match the width of the element. */
+  height: 100%; /* Match the height of the element. */
+  top: 0; /* Align the top edge with the parent. */
+  right: 0; /* Align the left edge with the parent. */
+  background: radial-gradient(
+    #000,
+    #000,
+    #000,
+    #ffffff00
+  ); /* Create a radial gradient from white to black. */
+  opacity: 0.2; /* Adjust the opacity for a more subtle effect. */
+  border-radius: 20%; /* If the element has a border-radius, the shadow should match it. */
+}
+
+/* Ensure the position of the parent is set to relative so that the absolute positioning of the pseudo-element works correctly. */
+.text-shadow {
+  position: relative;
 }

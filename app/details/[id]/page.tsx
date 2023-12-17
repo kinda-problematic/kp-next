@@ -1,3 +1,4 @@
+import { AddToCartButton } from "@/components/AddToCartButton";
 import stripe from "@/config/stripe";
 import { formatToDecimal } from "@/lib/format-to-decimal";
 
@@ -29,6 +30,7 @@ export default async function Details({ params }: DetailsProps) {
   return (
     <div>
       {data.name}
+      <AddToCartButton product={data} />
     </div>
   );
 }

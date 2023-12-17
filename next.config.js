@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: "files.stripe.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "kp-clopthing.s3.us-east-2.amazonaws.com",
+        port: "",
+      },
     ],
   },
 };

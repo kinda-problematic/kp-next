@@ -3,10 +3,14 @@ import { ShoppingCartProvider } from "@/context/shopping-cart";
 import TopNav from "@/components/TopNav";
 import Link from "next/link";
 
-import { Inter } from "next/font/google";
+import { Inter, Bebas_Neue, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { AlterNav } from "@/components/AlterNav";
 
-const inter = Inter({ subsets: ["latin"] });
+export const inter = Inter({ subsets: ["latin"] });
+export const bebas_neue = Bebas_Neue({ weight: ["400"], subsets: ["latin"] });
+export const dm_sans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Kinda Problematic",
@@ -21,8 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <TopNav />
-        <ShoppingCartProvider><div className="p-14">{children}</div></ShoppingCartProvider>
+        <ShoppingCartProvider>
+          <AlterNav />
+          <div className="px-14 pt-10">{children}</div>
+        </ShoppingCartProvider>
       </body>
     </html>
   );

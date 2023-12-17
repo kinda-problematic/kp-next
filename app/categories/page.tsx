@@ -1,16 +1,8 @@
 import Link from "next/link";
 import { formatToDecimal } from "@/lib/format-to-decimal";
 import stripe from "@/config/stripe";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { ProductCard } from "@/components/ProductCard";
-import Image from "next/image";
+import { bebas_neue } from "@/app/layout";
 
 const getData = async () => {
   const res = await stripe.products.search({
@@ -40,12 +32,16 @@ export default async function Categories() {
   const data = await getData();
 
   return (
-    <div>
-      Categories
-      <Link href="/categories/hoodies-and-crewnecks">Hoodies & Crewnecks</Link>
-      <Link href="/categories/t-shirt">T-Shirts</Link>
-      <Link href="/categories/shorts-and-pants">Shorts and Pants</Link>
-      <div className="flex flex-col justify-center items-center md:flex-row md:flex-wrap md:justify-between md:items-start my-2">
+    <div className="bg-gradient-to-bl from-pink-400 to-cyan-600 -mr-14 -ml-14 -mt-14 pb-20 min-h-screen">
+      <h2
+        className={
+          bebas_neue.className +
+          " text-6xl underline text-center mx-auto py-10 text-white drop-shadow-lg"
+        }
+      >
+        All Categories
+      </h2>
+      <div className="flex flex-col justify-center items-center md:flex-row md:flex-wrap md:justify-evenly md:items-start px-14 my-2">
         {data.map((e: any) => (
           <ProductCard key={e.id} product={e} />
         ))}

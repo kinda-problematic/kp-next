@@ -1,12 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -16,6 +18,11 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow: {
+        "glowy-sm": "15px 15px 15px rgba(255, 255, 205)",
+        "glowy-sm-l": "0px 15px 15px rgba(255, 255, 200)",
+        "glowy-md": "20px 20px 20px rgba(255, 245, 225)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -50,6 +57,18 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        neon: "#ccff00",
+        kpblack: colors.black,
+        kpWhite: colors.white,
+        kpgray: "#353839",
+        kpNatural: "#FEFBEA",
+        kpPink: "#f36196",
+        iconic: "#00E5EE",
+        kpLightGray: "#6a6a6a",
+        kpPeach: "#DEB1A6",
+        kpCharcoal: "#414141",
+        kpBanner: "#ff0000",
+        babyBlue: "#89CFF0",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,12 +84,27 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        "gradient-shift-surf": {
+          "0%, 100%": {
+            background:
+              "linear-gradient(45deg, #66CCCC 0%, #00CCFF 100%)",
+          },
+          "25%, 75%": {
+            background:
+              "linear-gradient(45deg, #66CCCC 50%, #00CCFF 50%)",
+          },
+          "50%": {
+            background:
+              "linear-gradient(45deg, #00CCFF 0%, #66CCCC 100%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        surfing: "gradient-shift-surf 10s ease-in-out infinite alternate",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
