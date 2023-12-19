@@ -13,7 +13,7 @@ export default function Loading({
 }: {
   params: { collection?: string };
 }) {
-  console.log(params)
+  console.log(params);
   return (
     <div className="relative">
       <div
@@ -29,6 +29,7 @@ export default function Loading({
       >
         {Array.from(Array(3).keys()).map((item: any) => (
           <Link
+            key={item}
             href=""
             className={
               "rounded-3xl group shadow-glowy-dark hover:shadow-glowy-md mb-10 transition-all ease-in-out duration-100 bg-transparent"
