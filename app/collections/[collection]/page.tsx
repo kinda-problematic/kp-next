@@ -35,7 +35,7 @@ const bottomCopies: BottomCopyList = {
     content: `In a world full of expectations, "Kinda Problematic" is your invitation to defy the ordinary. Our pieces are designed for comfort, built for durability, and styled for the statement-makers. So go ahead—wear the KP Hoodie, rock those KP Joggers, and do it all with an unapologetic flair that's uniquely yours.`,
   },
   "social-media": {
-    name: "in-the-mood",
+    name: "social-media",
     title: "Capture the Moment in Style",
     content: `Why just scroll when you can make the scroll stop? Our 'Social Media' tees are perfect for those who speak in hashtags and live for likes. Whether you're channeling 'Bad Influencer' vibes or rocking 'Iconic' status, your fashion choices are about to get as many likes as your finest filtered photo.`,
   },
@@ -68,7 +68,7 @@ export default async function Collection({ params }: CollectionProps) {
   const collectionNormalized = params.collection.split("-").join(" ");
 
   return (
-    <div className="bg-gradient-to-tr from-cyan-600 to-emerald-700 -mr-14 -ml-14 -mt-14 pb-20 min-h-screen">
+    <div className="flex flex-col justify-start items-center space-y-10 bg-gradient-to-tr from-cyan-600 to-emerald-700 min-h-screen py-6">
       <h2
         className={
           bebas_neue.className +
@@ -77,21 +77,20 @@ export default async function Collection({ params }: CollectionProps) {
       >
         {collectionNormalized} Collection
       </h2>
-      <div className="flex flex-col justify-center items-center md:flex-row md:flex-wrap md:justify-evenly md:items-start my-2 ">
+      <div className="flex flex-col justify-center items-center md:flex-row md:flex-wrap md:justify-evenly md:items-center md:space-x-4 my-2 ">
         {data.data.map((e: any) => (
           <ProductCard key={e.id} product={e} />
         ))}
       </div>
       <div
         className={
-          dm_sans.className +
-          " flex flex-col px-80 justify-center text-white text-center mb-10"
+          " flex flex-col justify-center items-center text-white text-center mb-10"
         }
       >
         <h2 className="text-xl underline text-center mx-auto text-white">
           {bottomCopies[params.collection]?.title}
         </h2>
-        <p>{bottomCopies[params.collection]?.content}</p>
+        <p className="w-3/5">{bottomCopies[params.collection]?.content}</p>
       </div>
     </div>
   );

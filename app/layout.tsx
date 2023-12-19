@@ -24,10 +24,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={dm_sans.className}>
         <ShoppingCartProvider>
           <AlterNav />
-          <div className="px-14 pt-10">{children}</div>
+          <div>{children}</div>
         </ShoppingCartProvider>
       </body>
     </html>

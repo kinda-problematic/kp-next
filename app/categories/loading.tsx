@@ -1,15 +1,14 @@
 import { bebas_neue } from "@/app/layout";
 
-export default function Loading({ params }: { params: { category?: string } }) {
+export default function Loading() {
   return (
-    <div className="bg-gradient-to-bl from-pink-400 to-cyan-600 -mr-14 -ml-14 -mt-14 pb-20 min-h-screen">
+    <div className="bg-gradient-to-bl from-pink-400 to-cyan-600 flex flex-col justify-start space-y-10 items-center min-h-screen py-6">
       <h2
         className={
-          bebas_neue.className +
-          " text-6xl underline text-center mx-auto py-10 text-white drop-shadow-lg"
+          bebas_neue.className + " text-white text-6xl underline tracking-wide"
         }
       >
-        {params?.category ?? "All Categories"}
+        {"All Categories"}
       </h2>
     </div>
   );

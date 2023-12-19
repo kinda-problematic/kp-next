@@ -30,7 +30,8 @@ const ListItem = React.forwardRef<
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        {/* @ts-ignore */}
+        <Link
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
@@ -42,7 +43,7 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );
@@ -53,8 +54,8 @@ export const AlterNav = () => {
   const shoppingCart = useShoppingCart();
 
   return (
-    <NavigationMenu className="capitalize bg-white sticky top-0 drop-shadow-md">
-      <NavigationMenuList className="w-screen flex-row justify-between px-6 md:px-10">
+    <NavigationMenu className="capitalize bg-white sticky top-0 drop-shadow-md overflow-x-clip">
+      <NavigationMenuList className="w-screen flex-row justify-between px-6">
         <div className="flex flex-row justify-between items-center">
           <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
@@ -75,10 +76,10 @@ export const AlterNav = () => {
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 {ALTER_NAV_ITEMS_COLLECTIONS.map((item: AlterNavLink) => {
                   return item.title === "all collections" ? (
-                    <li className="row-span-3">
+                    <li className="row-span-3" key={item.title}>
                       <NavigationMenuLink asChild>
-                        <a
-                          className="sm-background flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md"
+                        <Link
+                          className="flex bg-sm hover:bg-sm2 h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md"
                           href={item.href}
                         >
                           <div className="mb-2 mt-4 text-lg font-medium text-white">
@@ -87,7 +88,7 @@ export const AlterNav = () => {
                           <p className="text-sm leading-tight text-white">
                             {item.description}
                           </p>
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                   ) : (
@@ -109,10 +110,10 @@ export const AlterNav = () => {
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 {ALTER_NAV_ITEMS_CATEGORIES.map((item: AlterNavLink) => {
                   return item.title === "all categories" ? (
-                    <li className="row-span-3">
+                    <li className="row-span-3" key={item.title}>
                       <NavigationMenuLink asChild>
-                        <a
-                          className="kp-background flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md"
+                        <Link
+                          className="bg-itm hover:bg-itm2 transition duration-300 ease-in-out flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md"
                           href={item.href}
                         >
                           <div className="mb-2 mt-4 text-lg font-medium text-white">
@@ -121,7 +122,7 @@ export const AlterNav = () => {
                           <p className="text-sm leading-tight text-white">
                             {item.description}
                           </p>
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                   ) : (
@@ -182,9 +183,7 @@ export const AlterNav = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/shopping-cart" legacyBehavior passHref>
-            <NavigationMenuLink
-              className={navigationMenuTriggerStyle()}
-            >
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <span className="relative">
                 <ShoppingCartIcon size={36} />
                 <p className="absolute bottom-0 bg-red-500 text-white rounded-full h-5 w-5 text-sm text-center justify-center items-center flex">

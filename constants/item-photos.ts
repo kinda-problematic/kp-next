@@ -1,0 +1,87 @@
+export const ITEM_PHOTOS: { [key: string]: string[] } = {
+  BITS: [
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/BI-Tshirt/BI_NATURAL_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/BI-Tshirt/BI_NATURAL2.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/BI-Tshirt/BI_GRAY.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/BI-Tshirt/BI_GRAY_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/BI-Tshirt/BI_GROUP.jpg",
+  ],
+  KPPN: [
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Joggers/BLACK_JOGGER_FULL_BODY.jpg",
+
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Joggers/FULL_BODY_BLACK_JOGGER.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Joggers/BLACK_JOGGER_FRONT.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Joggers/BLACK_JOGGER_POSE3.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Joggers/BLACK_JOGGER_BACK.jpg",
+  ],
+  KPSR: [
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Shorts/WHITE_SHORT_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Shorts/WHITE_OUTFIT_SHORTS.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Shorts/BLACK_SHORTS_SIDE.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Shorts/BLACK_SHORTS_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Shorts/BLACK_WHITE_SHORTS.jpg",
+  ],
+  HMTS: [
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/HM-Tshirt/HM_JANE_FRONT.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/HM-Tshirt/HM_JANE_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/HM-Tshirt/HM_GRAY_FRONT.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/HM-Tshirt/HM_GRAY_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/HM-Tshirt/HM_GROUP_PHOTO.jpg",
+  ],
+  YNMTS: [
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/INYM-tshirt/INYM_BACK_BLACK2.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/INYM-tshirt/INYM_COUPLE_FRONT.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/INYM-tshirt/PINK_FRONT2_INYM.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/INYM-tshirt/INYM_COUPLE2_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/INYM-tshirt/INYM_GROUP.jpg",
+  ],
+  ICTS: [
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/Iconic-TS/ICONIC_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/Iconic-TS/ICONIC_FRONT_POSE.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/Iconic-TS/ICONIC_MAN_STANDING.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/Iconic-TS/ICONIC_MAN.jpg",
+  ],
+  AQTS: [
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/AQ-Tshirts/AQ_PINK_FRONT.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/AQ-Tshirts/AQ_PINK_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/AQ-Tshirts/AQ_BLACK_FRONT.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/AQ-Tshirts/AQ_BLACK_POSE.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/AQ-Tshirts/AQ_BACK_BLACK.jpg",
+  ],
+  AQCPCK: [
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/AQ-Crewneck/AQ_CREWNECK_FRONT.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/AQ-Crewneck/AQ_CREWNECK_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/AQ-Crewneck/AQ_CK_FRONT_POSE.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/AQ-Crewneck/AQ_POSE_CK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/AQ-Crewneck/AQ_CK_GIRLS.jpg",
+  ],
+  KPNCK: [
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-CK-NEON/KP_NEON_BOY.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-CK-NEON/KP_NEON_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-CK-NEON/FRONT_NEON.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-CK-NEON/KP_CK_NEON_POSE.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-CK-NEON/KP_NEON_FIRLS.jpg",
+  ],
+  KPCK: [
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Crewneck/CREWNECK_NUDE_PSOE.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Crewneck/KP_CREWNECK_NATURAL_CLSEUP.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Crewneck/CREWNECK_NUDE_BACK.jpg",
+
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Crewneck/CREWNECK_GRAY_FRONT.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Crewneck/CREWNECK_GRAY_BACK2.jpg",
+  ],
+  KPHD: [
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Hoodies/KP_BLACK_HOODIE_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Hoodies/KP_HOODIE_DUO.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Hoodies/WHITE_HOODIE_FRONT2.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Hoodies/WHITE_HOODIE_POSE.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Hoodies/KP_HOODIE_GROUP.jpg",
+  ],
+  KPTS: [
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Tshirts/KP_TS_FRONT.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Tshirts/KP_FRONT_TS.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Tshirts/KP_TS_BACK.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Tshirts/KP_TS_POSE.jpg",
+    "https://kp-clopthing.s3.us-east-2.amazonaws.com/KP-Tshirts/KP_TS_POSE2.jpg",
+  ],
+};
