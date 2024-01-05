@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { bebas_neue, inter, dm_sans } from "../layout";
+import { bebas_neue, dm_sans } from "../layout";
 
 interface CollectionsI {
   inTheMood: any[];
@@ -111,10 +111,15 @@ export default async function Collections() {
   return (
     <div>
       <div className="flex flex-col justify-start space-y-10 items-center min-h-screen bg-gradient-to-t from-zinc-600 to-zinc-700 border-none py-6">
-        <h2 className={bebas_neue.className + " text-white text-6xl underline tracking-wide"}>Collections</h2>
-        <div
-          className="flex flex-row justify-evenly w-full space-x-4"
+        <h2
+          className={
+            bebas_neue.className +
+            " text-white text-6xl underline tracking-wide"
+          }
         >
+          Collections
+        </h2>
+        <div className="flex flex-col items-center justify-center md:flex-row md:justify-evenly md:w-full md:space-x-4">
           {collectionsDescriptionsArray.map((e: CollectionsDescriptions) => (
             <Link
               href={e.href}

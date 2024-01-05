@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 interface ShoppingCartContextType {
   shoppingCartLength: number;
@@ -39,25 +39,35 @@ export const ShoppingCartProvider = ({
     }
   };
 
+  useEffect(() => {
+    const savedCart = localStorage.getItem("shoppingCart");
+    if (savedCart) {
+      const parsedCart = JSON.parse(savedCart);
+      setShoppingCart(parsedCart);
+      setShoppingCartLength(parsedCart.length);
+    }
+  }, []);
+
   const removeFromCart = (item: any) => {
-    const currentCart = [...shoppingCart];
-
-    if (Array.isArray(item)) {
-      const filteredCart = currentCart.filter((prod) => prod.id !== item[0].id);
-      setShoppingCart(filteredCart);
-      setShoppingCartLength(filteredCart.length);
-      localStorage.setItem("shoppingCart", JSON.stringify(filteredCart));
-    } else {
-      const filteredCart = currentCart.filter((prod) => prod !== item);
-      const cartWithItem = currentCart.filter((prod) => prod === item);
-      cartWithItem.pop();
-
-      setShoppingCart([...filteredCart, ...cartWithItem]);
-      setShoppingCartLength([...filteredCart, ...cartWithItem].length);
-      localStorage.setItem(
-        "shoppingCart",
-        JSON.stringify([...filteredCart, ...cartWithItem])
+    if (item === "all") {
+      // Clear the entire cart
+      setShoppingCart([]);
+      setShoppingCartLength(0);
+      localStorage.removeItem("shoppingCart");
+    } else if (Array.isArray(item)) {
+      // Remove all items in the array
+      const updatedCart = shoppingCart.filter(
+        (cartItem) => !item.includes(cartItem)
       );
+      setShoppingCart(updatedCart);
+      setShoppingCartLength(updatedCart.length);
+      localStorage.setItem("shoppingCart", JSON.stringify(updatedCart));
+    } else {
+      // Remove a single specific item
+      const updatedCart = shoppingCart.filter((cartItem) => cartItem !== item);
+      setShoppingCart(updatedCart);
+      setShoppingCartLength(updatedCart.length);
+      localStorage.setItem("shoppingCart", JSON.stringify(updatedCart));
     }
   };
 

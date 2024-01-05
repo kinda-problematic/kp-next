@@ -22,6 +22,7 @@ import Link from "next/link";
 import { MenuSquare, ShoppingCartIcon } from "lucide-react";
 import { useShoppingCart } from "@/context/shopping-cart";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { bebas_neue } from "@/app/layout";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -45,6 +46,7 @@ const ListItem = React.forwardRef<
           </p>
         </Link>
       </NavigationMenuLink>
+      <hr className="text-black bg-black md:hidden" />
     </li>
   );
 });
@@ -71,7 +73,9 @@ export const AlterNav = () => {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem className="hidden md:block">
-            <NavigationMenuTrigger>Collections</NavigationMenuTrigger>
+            <NavigationMenuTrigger className={" text-lg"}>
+              Collections
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 {ALTER_NAV_ITEMS_COLLECTIONS.map((item: AlterNavLink) => {
@@ -105,7 +109,9 @@ export const AlterNav = () => {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem className="hidden md:block">
-            <NavigationMenuTrigger>Categories</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="text-lg">
+              Categories
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 {ALTER_NAV_ITEMS_CATEGORIES.map((item: AlterNavLink) => {
@@ -139,7 +145,9 @@ export const AlterNav = () => {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem className="hidden md:block">
-            <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="text-lg">
+              About Us
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                 {ALTER_NAV_ITEMS_ABOUT_US.map((item: AlterNavLink) => (
@@ -155,13 +163,13 @@ export const AlterNav = () => {
             </NavigationMenuContent>
           </NavigationMenuItem>
         </div>
-        <NavigationMenuItem className="absolute left-1/2 translate-x-1/2 md:hidden">
+        <NavigationMenuItem className="absolute bg-white left-1/2 translate-x-1/2 md:hidden">
           <NavigationMenuTrigger>
             <MenuSquare />
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ScrollArea className="max-h-[600px] overflow-y-scroll">
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ScrollArea className="max-h-[600px] overflow-y-scroll bg-white rounded-lg">
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 {[
                   ALTER_NAV_ITEMS_COLLECTIONS,
                   ALTER_NAV_ITEMS_CATEGORIES,

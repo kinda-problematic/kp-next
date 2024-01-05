@@ -66,12 +66,21 @@ const colorMap: ColorsMap = {
   },
 };
 
-export const ProductCard = ({ product }: { product: any }) => {
+export const ProductCard = ({
+  product,
+  className,
+}: {
+  product: any;
+  className?: string;
+}) => {
   return (
     <Link href={`/details/${product.id}`}>
       <Card
         key={product.id}
-        className={`w-80 h-[480px] mb-8 flex flex-col justify-start items-center shadow-none border-none group hover:border hover:border-white hover:shadow-2xl hover:scale-105 transition-all duration-30 ease-in-out rounded-2xl`}
+        className={
+          `w-80 h-[480px] mb-8 flex flex-col justify-start items-center shadow-none border-none group hover:border hover:border-white hover:shadow-2xl hover:scale-105 transition-all duration-30 ease-in-out rounded-2xl ` +
+          className
+        }
       >
         <CardHeader className="mx-auto m-6 group-hover:hidden relative h-[310px] w-[210px]">
           <Image

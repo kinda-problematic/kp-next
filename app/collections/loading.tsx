@@ -15,43 +15,43 @@ export default function Loading({
 }) {
   console.log(params);
   return (
-    <div className="relative">
-      <div
-        className={
-          `${
-            params?.collection
-              ? 'after:content-["' + params?.collection + '"] '
-              : 'after:content-["COLLECTIONS"] '
-          }` +
-          bebas_neue.className +
-          " flex flex-col items-center md:items-start md:flex-row md:justify-around tracking-widest min-h-screen bg-gradient-to-t from-zinc-600 to-zinc-700 -mr-14 -ml-14 -mt-14 py-40 pb-40 border-none  after:absolute after:mx-auto after:top-10 after:z-40 after:text-white after:text-6xl after:underline"
-        }
-      >
-        {Array.from(Array(3).keys()).map((item: any) => (
-          <Link
-            key={item}
-            href=""
-            className={
-              "rounded-3xl group shadow-glowy-dark hover:shadow-glowy-md mb-10 transition-all ease-in-out duration-100 bg-transparent"
-            }
-          >
-            <Card
-              className={`rounded-3xl md:h-[500px] w-[350px] justify-between flex flex-col drop-shadow-2xl bg-transparent`}
+    <div>
+      <div className="flex flex-col justify-start space-y-10 items-center min-h-screen bg-gradient-to-t from-zinc-600 to-zinc-700 border-none py-6">
+        <h2
+          className={
+            bebas_neue.className +
+            " text-white text-6xl underline tracking-wide"
+          }
+        >
+          Collections
+        </h2>
+        <div className="flex flex-col items-center justify-center md:flex-row md:justify-evenly md:w-full md:space-x-4">
+          {Array.from(Array(3).keys()).map((item: any) => (
+            <Link
+              key={item}
+              href=""
+              className={
+                "rounded-3xl group shadow-glowy-dark hover:shadow-glowy-md mb-10 transition-all ease-in-out duration-100 bg-transparent"
+              }
             >
-              <CardHeader>
-                <CardTitle className="text-3xl">
-                  <span className="text-white p-[1px]"></span>
-                </CardTitle>
-                <CardDescription>
-                  <span className="text-white p-[1px]"></span>
-                </CardDescription>
-              </CardHeader>
-              <CardFooter>
-                <span className="text-sm text-white p-[1px]"></span>
-              </CardFooter>
-            </Card>
-          </Link>
-        ))}
+              <Card
+                className={`rounded-3xl md:h-[500px] w-[350px] justify-between flex flex-col drop-shadow-2xl bg-transparent`}
+              >
+                <CardHeader>
+                  <CardTitle className="text-3xl">
+                    <span className="text-white p-[1px]"></span>
+                  </CardTitle>
+                  <CardDescription>
+                    <span className="text-white p-[1px]"></span>
+                  </CardDescription>
+                </CardHeader>
+                <CardFooter>
+                  <span className="text-sm text-white p-[1px]"></span>
+                </CardFooter>
+              </Card>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -116,14 +116,14 @@ export default async function Categories() {
         >
           All Categories
         </h2>
-        <div className="flex flex-row justify-evenly w-full space-x-4">
+        <div className="flex flex-col items-center justify-start md:flex-row md:justify-evenly md:w-full space-x-4">
           {categoriesDescriptionsArray.map((e: CategoriesDescriptions) => (
             <Link
               href={e.href}
               key={e.title}
               className={
                 e.bgImage +
-                " rounded-3xl group shadow-glowy-sm hover:shadow-glowy-md mb-10 transition-all ease-in-out duration-100"
+                " rounded-3xl group shadow-glowy-sm hover:shadow-glowy-md mb-10 transition-all ease-in-out duration-100 overflow-x-clip"
               }
             >
               <Card

@@ -18,7 +18,6 @@ const assembleLineItems = (shoppingCart: any) => {
     quantity: count,
     adjustable_quantity: {
       enabled: true,
-      minimum: 0,
       maximum: 100,
     },
   }));

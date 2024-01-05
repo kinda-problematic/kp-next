@@ -21,7 +21,9 @@ module.exports = {
       boxShadow: {
         "glowy-dark": "15px 15px 15px rgba(255, 255, 205, 0.25)",
         "glowy-sm": "15px 15px 15px rgba(255, 255, 205)",
-        "glowy-sm-l": "0px 15px 15px rgba(255, 255, 200)",
+        "glowy-sm-360": "0px 0px 15px rgba(255, 255, 200)",
+        "glowy-sm-360-lg": "0px 0px 20px rgba(255, 255, 200)",
+        "glowy-sm-360-xs": "0px 0px 10px rgba(255, 255, 200)",
         "glowy-md": "20px 20px 20px rgba(255, 245, 225)",
       },
       colors: {
@@ -76,6 +78,7 @@ module.exports = {
         sm2: "linear-gradient(60deg, #00e5ee, #f36196, #5e5687, #5e5687)",
         itm: "radial-gradient(#f36196, #5e5687, #f36196)",
         itm2: "radial-gradient(#5e5687, #f36196, #5e5687)",
+        surf: "linear-gradient(270deg, #f36196, #06b6d4)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -83,6 +86,31 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "breathing-glow": {
+          from: {
+            boxShadow: "0px 0px 10px rgba(255, 255, 200, 0.6)",
+          },
+          "50%": {
+            boxShadow: "0px 0px 20px rgba(255, 255, 200, 0.8)",
+          },
+          to: {
+            boxShadow: "0px 0px 10px rgba(255, 255, 200, 0.6)",
+          },
+        },
+        wave: {
+          "0%, 100%": {
+            backgroundImage: "linear-gradient(60deg, #f36196, #06b6d4)",
+          },
+          "25%": {
+            backgroundImage: "linear-gradient(53deg, #f783a9, #2ebbd4)",
+          },
+          "50%": {
+            backgroundImage: "linear-gradient(45deg, #06b6d4, #f36196)",
+          },
+          "75%": {
+            backgroundImage: "linear-gradient(53deg, #2ebbd4, #f783a9)",
+          },
+        },
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -106,12 +134,26 @@ module.exports = {
           from: { backgroundSize: "100% 100%" },
           to: { backgroundSize: "110% 110%" },
         },
+        "surf-wave": {
+          "0%, 100%": {
+            backgroundPosition: "0% 50%",
+          },
+          "50%": {
+            backgroundPosition: "100% 50%",
+          },
+        },
+      },
+      backgroundSize: {
+        "four-hundo": "400% 400%"
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         surfing: "gradient-shift-surf 10s ease-in-out infinite alternate",
         "bg-pulse": "color-pulse 1s ease-in-out infinite alternate",
+        breathe: "breathing-glow 3s ease-in-out infinite",
+        "bg-wave": "wave 8s cubic-bezier(0.1, 0.7, 0.1, 1) infinite",
+        "surf-wave": "surf-wave 5s ease-in-out infinite",
       },
     },
   },
