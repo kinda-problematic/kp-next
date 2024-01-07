@@ -2,7 +2,6 @@
 import { Button } from "./ui/button";
 import { useShoppingCart } from "@/context/shopping-cart";
 import { useSearchParams } from "next/navigation";
-import { useCallback, useMemo } from "react";
 
 interface AddToCartButtonProps {
   product: any;
@@ -86,6 +85,7 @@ export const AddToCartButton = ({
   const productToAdd = () => {
     const selectedSize = searchParams.get("size");
     const selectedColor = colorMap[searchParams.get("color") as string];
+    const count = Number(searchParams.get("count"));
     const skuPrefix =
       product.metadata.sku_prefix === "BI"
         ? "BIN"
@@ -99,7 +99,7 @@ export const AddToCartButton = ({
       return item.metadata.sku.includes(constructedSku);
     });
 
-    return filteredList;
+    return new Array(count).fill(filteredList);
   };
 
   return (

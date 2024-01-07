@@ -39,9 +39,13 @@ const getData = async (id: string) => {
 };
 
 const getFullProductList = async (productName: string) => {
+  const coercedName =
+    productName.toLowerCase() === "kp embroidered crewneck"
+      ? "kp unisex embroidered crewneck"
+      : productName;
   const products = await stripe.products.search({
     limit: 100,
-    query: `active:'true' AND -metadata['floor_model']:'true' and name:"${productName}"`,
+    query: `active:'true' AND -metadata['floor_model']:'true' and name:"${coercedName}"`,
   });
   const productsWithPrices = await Promise.all(
     products.data.map(async (item: any) => {

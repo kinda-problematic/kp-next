@@ -32,9 +32,9 @@ const collectionsDescriptionsArray: CollectionsDescriptionsArrayType = [
   {
     href: "#in-the-mood",
     title: "in the mood",
-    description: "feeling moody?",
+    description: "Elevate Your Mood",
     footer:
-      "no stress! check out our in the mood collection for something sweet. and remember: it's not that serious.",
+      "Dive into our 'In the Mood' collection for eclectic and uplifting styles. Perfect for adding a spark of joy to your day.",
     className: "backdrop-blur-sm bg-transparent hover:backdrop-blur-none",
     bgImage:
       "bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/landing_photos/ITM_COLLECTION.jpg')] bg-center bg-[length:650px_950px] hover:bg-[length:660px_960px]",
@@ -42,9 +42,9 @@ const collectionsDescriptionsArray: CollectionsDescriptionsArrayType = [
   {
     href: "#kinda-problematic",
     title: "kinda problematic",
-    description: "feeling problematic?",
-    footer: `our kp collection will fit your needs! whether you're
-    looking for something comfy or daring, we got you covered.`,
+    description: "Embrace Your Edge",
+    footer:
+      "Our 'Kinda Problematic' collection is designed for the bold and the brave. Stand out with unique, daring designs.",
     className: "backdrop-blur-sm bg-transparent hover:backdrop-blur-none",
     bgImage:
       "bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/landing_photos/KP_COLLECTION.jpg')] bg-center bg-[length:690px_990px] hover:bg-[length:700px_1000px]",
@@ -52,8 +52,9 @@ const collectionsDescriptionsArray: CollectionsDescriptionsArrayType = [
   {
     href: "#social-media",
     title: "social media",
-    description: `Make waves online!`,
-    footer: `Explore our 'Social Media' collection to elevate your presence. Stay iconic, vibrant, and unforgettably you.`,
+    description: "Trendsetting Styles",
+    footer:
+      "Our 'Social Media' collection offers trendy, eye-catching outfits that are sure to get likes both online and off. Be the trendsetter you are meant to be.",
     className: "backdrop-blur-sm bg-transparent hover:backdrop-blur-none",
     bgImage:
       "bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/landing_photos/SM_COLLECTION2.jpeg')] bg-center bg-[length:690px_990px] hover:bg-[length:700px_1000px]",
@@ -130,7 +131,7 @@ export default async function Collections() {
               }
             >
               <Card
-                className={`${e.className} ${dm_sans.className} rounded-3xl md:h-[500px] w-[350px] justify-between flex flex-col drop-shadow-2xl`}
+                className={`${e.className} ${dm_sans.className} rounded-3xl md:h-[500px] w-[350px] justify-between flex flex-col drop-shadow-2xl new-shadow`}
               >
                 <CardHeader>
                   <CardTitle className="text-3xl">

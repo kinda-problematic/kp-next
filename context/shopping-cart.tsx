@@ -57,14 +57,21 @@ export const ShoppingCartProvider = ({
     } else if (Array.isArray(item)) {
       // Remove all items in the array
       const updatedCart = shoppingCart.filter(
-        (cartItem) => !item.includes(cartItem)
+        (cartItem) => !item[0].id === cartItem.id
       );
       setShoppingCart(updatedCart);
       setShoppingCartLength(updatedCart.length);
       localStorage.setItem("shoppingCart", JSON.stringify(updatedCart));
     } else {
       // Remove a single specific item
-      const updatedCart = shoppingCart.filter((cartItem) => cartItem !== item);
+      let found = false;
+      const updatedCart = shoppingCart.filter((cartItem) => {
+        if (cartItem.id === item.id && !found) {
+          found = true;
+          return false;
+        }
+        return true;
+      });
       setShoppingCart(updatedCart);
       setShoppingCartLength(updatedCart.length);
       localStorage.setItem("shoppingCart", JSON.stringify(updatedCart));

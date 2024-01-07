@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { ShoppingCartProvider } from "@/context/shopping-cart";
-import TopNav from "@/components/TopNav";
-import Link from "next/link";
 
 import { Inter, Bebas_Neue, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { AlterNav } from "@/components/AlterNav";
+import Footer from "@/components/Footer";
 
 export const inter = Inter({ subsets: ["latin"] });
 export const bebas_neue = Bebas_Neue({ weight: ["400"], subsets: ["latin"] });
@@ -27,6 +26,7 @@ export default function RootLayout({
         <ShoppingCartProvider>
           <AlterNav />
           <div>{children}</div>
+          <Footer />
         </ShoppingCartProvider>
       </body>
     </html>

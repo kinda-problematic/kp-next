@@ -26,9 +26,9 @@ const categoriesDescriptionsArray: CategoriesDescriptionsArrayType = [
   {
     href: "#t-shirts",
     title: "t-shirts",
-    description: "feeling moody?",
+    description: "Casual Comfort Redefined",
     footer:
-      "no stress! check out our in the mood collection for something sweet. and remember: it's not that serious.",
+      "Discover our versatile range of t-shirts. Perfect for any occasion, blending style and comfort effortlessly.",
     className: "backdrop-blur-sm bg-transparent hover:backdrop-blur-none",
     bgImage:
       "bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/landing_photos/ITM_COLLECTION.jpg')] bg-center bg-[length:650px_950px] hover:bg-[length:660px_960px]",
@@ -36,9 +36,9 @@ const categoriesDescriptionsArray: CategoriesDescriptionsArrayType = [
   {
     href: "#hoodies-and-crewnecks",
     title: "hoodies & crewnecks",
-    description: "stay warm out there!",
-    footer: `our kp collection will fit your needs! whether you're
-    looking for something comfy or daring, we got you covered.`,
+    description: "Cozy Up in Style",
+    footer:
+      "Embrace the chill with our cozy hoodies and crewnecks. Perfect for lounging or on-the-go style.",
     className: "backdrop-blur-sm bg-transparent hover:backdrop-blur-none",
     bgImage:
       "bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/landing_photos/KP_COLLECTION.jpg')] bg-center bg-[length:690px_990px] hover:bg-[length:700px_1000px]",
@@ -46,8 +46,9 @@ const categoriesDescriptionsArray: CategoriesDescriptionsArrayType = [
   {
     href: "#shorts-and-pants",
     title: "shorts and pants",
-    description: `Make waves online!`,
-    footer: `Explore our 'Social Media' collection to elevate your presence. Stay iconic, vibrant, and unforgettably you.`,
+    description: "Fashion Meets Function",
+    footer:
+      "From trendy shorts to functional pants, find your perfect fit for any occasion. Style and comfort in every step.",
     className: "backdrop-blur-sm bg-transparent hover:backdrop-blur-none",
     bgImage:
       "bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/landing_photos/SM_COLLECTION2.jpeg')] bg-center bg-[length:690px_990px] hover:bg-[length:700px_1000px]",
@@ -127,7 +128,7 @@ export default async function Categories() {
               }
             >
               <Card
-                className={`${e.className} rounded-3xl md:h-[500px] w-[350px] justify-between flex flex-col drop-shadow-2xl`}
+                className={`${e.className} rounded-3xl md:h-[500px] w-[350px] justify-between flex flex-col drop-shadow-2xl new-shadow`}
               >
                 <CardHeader>
                   <CardTitle className="text-3xl">
