@@ -5,10 +5,6 @@ import { ShoppingCartIcon } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string
-);
-
 export default function ShoppingCart() {
   const cartContext = useShoppingCart();
   console.log(cartContext.shoppingCart);
