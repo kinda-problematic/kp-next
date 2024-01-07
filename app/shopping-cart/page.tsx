@@ -1,12 +1,6 @@
 "use client";
 import { useShoppingCart } from "@/context/shopping-cart";
-import { useState, useEffect, Suspense } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import { Skeleton } from "@/components/ui/skeleton";
-import {
-  EmbeddedCheckoutProvider,
-  EmbeddedCheckout,
-} from "@stripe/react-stripe-js";
 import { ShoppingCartIcon } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -17,6 +11,7 @@ const stripePromise = loadStripe(
 
 export default function ShoppingCart() {
   const cartContext = useShoppingCart();
+  console.log(cartContext.shoppingCart);
 
   return (
     <div className="py-20 flex flex-col items-center justify-center min-h-screen bg-slate-800">
