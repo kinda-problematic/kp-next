@@ -55,7 +55,13 @@ export async function POST(req: any) {
       shipping_address_collection: {
         allowed_countries: ["US"],
       },
-      shipping_options: [{ shipping_rate: "shr_1MrOCvAr8NKIaNewceQ8KVWM" }],
+      shipping_options: [
+        {
+          shipping_rate: origin.includes("localhost")
+            ? "shr_1MrOCvAr8NKIaNewceQ8KVWM"
+            : "shr_1Nq1gnAr8NKIaNewaFvg6N4X",
+        },
+      ],
       line_items: assembleLineItems(lineItems),
       mode: "payment",
       automatic_tax: {
