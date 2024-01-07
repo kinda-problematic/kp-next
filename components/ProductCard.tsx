@@ -73,8 +73,14 @@ export const ProductCard = ({
   product: any;
   className?: string;
 }) => {
+  const availableColors = product.metadata.colors
+    .split(",")
+    .map((color: string) => colorMap[color]);
+
   return (
-    <Link href={`/details/${product.id}`}>
+    <Link
+      href={`/details/${product.id}?size=md&count=1&color=${availableColors[0].name}`}
+    >
       <Card
         key={product.id}
         className={

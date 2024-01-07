@@ -24,10 +24,12 @@ const assembleLineItems = (shoppingCart: any) => {
 };
 
 export async function GET(req: any) {
-  console.log(req);
+  const { searchParams } = new URL(req.url);
+  const session_id = searchParams.get("session_id");
+
   try {
     const session = await stripe.checkout.sessions.retrieve(
-      req.query.session_id
+      session_id as string
     );
 
     return NextResponse.json({
@@ -46,7 +48,6 @@ export async function POST(req: any) {
   const lineItems = await req.json();
 
   try {
-    // Create Checkout Sessions from body params.
     const session = await stripe.checkout.sessions.create({
       ui_mode: "embedded",
       allow_promotion_codes: true,
@@ -62,7 +63,7 @@ export async function POST(req: any) {
       invoice_creation: {
         enabled: true,
       },
-      return_url: "http://localhost:3000/return",
+      return_url: `${process.env.BASE_URL}/return?session_id={CHECKOUT_SESSION_ID}`,
     });
 
     return NextResponse.json({ clientSecret: session.client_secret });

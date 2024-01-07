@@ -20,7 +20,7 @@ export const PhotoList = ({
   const [selectedImage, setSelectedImage] = useState(urlList[0]);
 
   return (
-    <div className="flex flex-col-reverse justify-center items-center w-full md:flex-row md:justify-end">
+    <div className="flex flex-col-reverse justify-center items-center w-full md:flex-row md:justify-end md:items-start">
       <ScrollArea className="h-[600px] hidden md:block">
         <div className="flex justify-center items-center md:flex-col md:items-center md:justify-between space-x-2 md:space-y-4 m-4">
           {urlList.map((url, i) => (
@@ -38,7 +38,7 @@ export const PhotoList = ({
                 alt={`Thumbnail ${i}`}
                 width={55}
                 height={55}
-                className="rounded-lg cursor-pointer"
+                className="rounded-lg cursor-pointer mx-auto"
                 objectFit="cover"
               />
             </button>

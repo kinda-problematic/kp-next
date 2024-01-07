@@ -5,7 +5,6 @@ import Link from "next/link";
 
 import { Inter, Bebas_Neue, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { AlterNav } from "@/components/AlterNav";
 
 export const inter = Inter({ subsets: ["latin"] });

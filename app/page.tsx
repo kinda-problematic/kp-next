@@ -3,7 +3,7 @@ import { bebas_neue } from "./layout";
 import stripe from "@/config/stripe";
 import { Suspense } from "react";
 import { ProductCard } from "@/components/ProductCard";
-
+// load all products here and then make available with context
 const getData = async () => {
   const res = await stripe.products.search({
     limit: 100,
@@ -15,7 +15,6 @@ const getData = async () => {
 
 export default async function Home() {
   const { data } = await getData();
-  console.log(data);
 
   return (
     <main className="bg-kpCharcoal py-2">

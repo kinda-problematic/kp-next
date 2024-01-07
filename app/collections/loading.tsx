@@ -13,7 +13,6 @@ export default function Loading({
 }: {
   params: { collection?: string };
 }) {
-  console.log(params);
   return (
     <div>
       <div className="flex flex-col justify-start space-y-10 items-center min-h-screen bg-gradient-to-t from-zinc-600 to-zinc-700 border-none py-6">
