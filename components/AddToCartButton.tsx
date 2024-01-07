@@ -95,7 +95,6 @@ export const AddToCartButton = ({
       selectedSize?.toUpperCase() +
       selectedColor.value +
       product.metadata.sku_suffix;
-    console.log(constructedSku);
     const filteredList = fullProductList.find((item) => {
       return item.metadata.sku.includes(constructedSku);
     });

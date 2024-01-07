@@ -72,7 +72,6 @@ export async function POST(req: any) {
       },
       return_url: `${origin}/return?session_id={CHECKOUT_SESSION_ID}`,
     });
-    console.log(session);
 
     return NextResponse.json({ clientSecret: session.client_secret });
   } catch (err: any) {

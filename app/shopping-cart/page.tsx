@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 
 export default function ShoppingCart() {
   const cartContext = useShoppingCart();
-  console.log(cartContext.shoppingCart);
 
   return (
     <div className="py-20 flex flex-col items-center justify-center min-h-screen bg-slate-800">

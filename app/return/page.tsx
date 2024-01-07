@@ -10,7 +10,6 @@ export default function Return() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const sessionId = urlParams.get("session_id");
-    console.log(sessionId);
 
     fetch(`/api/checkout?session_id=${sessionId}`, {
       method: "GET",
