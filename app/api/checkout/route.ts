@@ -46,6 +46,7 @@ export async function GET(req: any) {
 
 export async function POST(req: any) {
   const lineItems = await req.json();
+  const { origin } = new URL(req.url);
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -63,7 +64,7 @@ export async function POST(req: any) {
       invoice_creation: {
         enabled: true,
       },
-      return_url: `${process.env.BASE_URL}/return?session_id={CHECKOUT_SESSION_ID}`,
+      return_url: `${origin}/return?session_id={CHECKOUT_SESSION_ID}`,
     });
 
     return NextResponse.json({ clientSecret: session.client_secret });
