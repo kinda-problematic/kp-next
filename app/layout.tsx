@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ShoppingCartProvider } from "@/context/shopping-cart";
+import { Analytics } from "@vercel/analytics/react";
 
 import { Inter, Bebas_Neue, DM_Sans } from "next/font/google";
 import "./globals.css";
@@ -27,6 +28,7 @@ export default function RootLayout({
           <AlterNav />
           <div>{children}</div>
           <Footer />
+          <Analytics />
         </ShoppingCartProvider>
       </body>
     </html>
