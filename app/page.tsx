@@ -3,18 +3,34 @@ import { bebas_neue } from "./layout";
 import stripe from "@/config/stripe";
 import { Suspense } from "react";
 import { ProductCard } from "@/components/ProductCard";
-// load all products here and then make available with context
+import { formatToDecimal } from "@/lib/format-to-decimal";
+
 const getData = async () => {
   const res = await stripe.products.search({
     limit: 100,
     query: 'metadata["home_page"]:"true"',
   });
+  const resWithPrices = await Promise.all(
+    res.data.map(async (item: any) => {
+      const price = await stripe.prices.retrieve(item.default_price);
 
-  return res;
+      return {
+        ...item,
+        metadata: {
+          ...item.metadata,
+          price: price.unit_amount_decimal
+            ? formatToDecimal(price.unit_amount_decimal)
+            : 0,
+        },
+      };
+    })
+  );
+
+  return resWithPrices;
 };
 
 export default async function Home() {
-  const { data } = await getData();
+  const data = await getData();
 
   return (
     <main className="bg-kpCharcoal py-2">
