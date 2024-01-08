@@ -77,7 +77,7 @@ export default function Page() {
       <p className="flex flex-col justify-center text-center my-10">
         For More Information:
         <Link
-          href="/faq"
+          href="/faqs"
           className="underline text-center text-blue-400 cursor-pointer ml-1"
         >
           FAQ
