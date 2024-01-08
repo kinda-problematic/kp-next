@@ -126,7 +126,7 @@ export default function Page() {
               <p>{item.content}</p>
               {item.extraContent
                 ? item.extraContent.map((content: string, i: any) => (
-                    <p>{content}</p>
+                    <p key={i}>{content}</p>
                   ))
                 : null}
             </AccordionContent>
