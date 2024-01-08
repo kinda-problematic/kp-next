@@ -17,6 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { track } from "@vercel/analytics/react";
 
 interface TableHeaderI {
   label: string;
@@ -99,7 +100,16 @@ export default function ShoppingCart() {
           <Table className="text-black">
             <TableCaption className="">
               <Button>
-                <Link href="/checkout">Checkout</Link>
+                <Link
+                  href="/checkout"
+                  onClick={() =>
+                    track("Checkout", {
+                      cart: JSON.stringify(cartContext.shoppingCart),
+                    })
+                  }
+                >
+                  Checkout
+                </Link>
               </Button>
             </TableCaption>
             <TableHeader>
@@ -116,7 +126,9 @@ export default function ShoppingCart() {
                     <TableCell className={`font-medium w-[400px]`}>
                       {item.name}
                     </TableCell>
-                    <TableCell className={`flex flex-col-reverse items-center justify-center space-y-1 md:flex-row md:justify-start md:items-center md:space-x-2 md:space-y-0 w-[200px]`}>
+                    <TableCell
+                      className={`flex flex-col-reverse items-center justify-center space-y-1 md:flex-row md:justify-start md:items-center md:space-x-2 md:space-y-0 w-[200px]`}
+                    >
                       <Button
                         className="p-0 w-10 h-10"
                         onClick={() => {

@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "./ui/button";
 import { useShoppingCart } from "@/context/shopping-cart";
-import { useSearchParams } from "next/navigation";
+import { track } from "@vercel/analytics/react";
 
 interface AddToCartButtonProps {
   product: any;
@@ -99,6 +99,9 @@ export const AddToCartButton = ({
       product.metadata.sku_suffix;
     const filteredList = fullProductList.find((item) => {
       return item.metadata.sku.includes(constructedSku);
+    });
+    track("Cart add", {
+      ...filteredList,
     });
 
     return new Array(count).fill(filteredList);
