@@ -1,8 +1,5 @@
-"use client";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { ITEM_PHOTOS } from "@/constants/item-photos";
 import Image from "next/image";
-import { useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -20,11 +17,7 @@ export const PhotoList = ({
   skuPrefix: string;
   skuSuffix: string;
 }) => {
-  const [urlList, setUrlList] = useState([
-    ...productImages,
-    ...ITEM_PHOTOS[skuPrefix + skuSuffix],
-  ]);
-  const [selectedImage, setSelectedImage] = useState(urlList[0]);
+  const urlList = [...productImages, ...ITEM_PHOTOS[skuPrefix + skuSuffix]];
 
   return (
     <div>
@@ -43,7 +36,7 @@ export const PhotoList = ({
                 }}
                 width={400}
                 height={400}
-                className="rounded-lg mx-auto my-auto m-4"
+                className="rounded-lg mx-auto my-auto"
                 objectFit="cover"
               />
             </CarouselItem>

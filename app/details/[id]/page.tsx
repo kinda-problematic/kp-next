@@ -98,7 +98,10 @@ export default async function Details({ params }: DetailsProps) {
         >
           {data.name}
         </h2>
-        <Separator className="mb-4" />
+        <Separator />
+        <h4 className={bebas_neue.className + " mb-4 mt-1 md:ml-1 text-3xl"}>
+          ${data.metadata.price}
+        </h4>
         <ObjectActions item={data} fullProductList={fullProductList} />
         <div className="mt-4">
           {data.description}
