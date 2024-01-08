@@ -37,6 +37,7 @@ export const PhotoList = ({
                 width={400}
                 height={400}
                 className="rounded-lg mx-auto my-auto"
+                priority={true}
                 objectFit="cover"
               />
             </CarouselItem>
