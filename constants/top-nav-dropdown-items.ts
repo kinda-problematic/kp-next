@@ -58,11 +58,21 @@ export const ALTER_NAV_ITEMS_ABOUT_US: AlterNavLink[] = [
   {
     title: "our story",
     href: "/our-story",
-    description: "learn more about Kinda Problematic and our journey.",
+    description: "Learn more about Kinda Problematic and our journey.",
   },
   {
     title: "contact us",
     href: "/contact-us",
-    description: "send us an email and let us know how you feel!",
+    description: "Send us an email and let us know how you feel!",
   },
+  {
+    title: "FAQs",
+    href: "/faqs",
+    description: "Got any questions? Check out our FAQs to get them answered!",
+  },
+  {
+    title: "shipping and returns",
+    href: "/shipping-and-returns",
+    description: "Find information about our shipping policies!"
+  }
 ];
