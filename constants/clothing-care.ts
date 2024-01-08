@@ -1,5 +1,5 @@
 const shippingReturns: string[] = [
-  "ENJOY FREE SHIPPING WHEN YOU ORDER $100 OR MORE",
+  "FREE SHIPPING",
   "Shipping within the U.S only.",
   "Our team is working hard to guarantee your order is shipped as soon as possible. Items in your order may ship separately.",
   "We accept returns and exchanges of unused and unwashed items purchased on kindaproblematic.com if they are requested within 14 days of the date your order was delivered.",
