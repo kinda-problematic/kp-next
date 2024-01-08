@@ -83,16 +83,16 @@ export default function Footer() {
             <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
               Support
             </h6>
-            {/* <p className="mb-4">
-              <a href="/faq" className="text-gray-600">
+            <p className="mb-4">
+              <a href="/faqs" className="text-gray-600">
                 FAQ
               </a>
-            </p> */}
-            {/* <p className="mb-4">
-              <a href="/shipping-returns" className="text-gray-600">
+            </p>
+            <p className="mb-4">
+              <a href="/shipping-and-returns" className="text-gray-600">
                 Shipping & Returns
               </a>
-            </p> */}
+            </p>
             <p>
               <a
                 href="/contact-us"
