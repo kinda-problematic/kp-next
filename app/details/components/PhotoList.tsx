@@ -31,7 +31,7 @@ export const PhotoList = ({
       <Carousel className="p-4 hidden md:block mb-8">
         <CarouselContent>
           {urlList.map((url, i) => (
-            <CarouselItem key={i} className="basis-full">
+            <CarouselItem key={i} className="basis-full flex">
               <Image
                 src={url}
                 alt={`Thumbnail ${i}`}
@@ -43,7 +43,7 @@ export const PhotoList = ({
                 }}
                 width={400}
                 height={400}
-                className="rounded-lg mx-auto m-4"
+                className="rounded-lg mx-auto my-auto m-4"
                 objectFit="cover"
               />
             </CarouselItem>
