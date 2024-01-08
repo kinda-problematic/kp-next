@@ -7,22 +7,13 @@ import { Bebas_Neue } from "next/font/google";
 
 const bebas_neue = Bebas_Neue({ weight: ["400"], subsets: ["latin"] });
 
-export default function QuantitySelector() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const [count, setCount] = useState(Number(searchParams.get("count")));
-
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams);
-      params.set(name, value);
-
-      return params.toString();
-    },
-    [searchParams]
-  );
-
+export default function QuantitySelector({
+  count,
+  setCount,
+}: {
+  count: any;
+  setCount: any;
+}) {
   return (
     <div className="flex flex-col items-center md:items-start">
       <span className={bebas_neue.className + " text-3xl md:mx-1"}>
@@ -34,13 +25,6 @@ export default function QuantitySelector() {
           className="rounded-full p-1 disabled:bg-gray-500 hover:outline disabled:hover:outline-none"
           onClick={() => {
             const newCount = count - 1;
-
-            router.replace(
-              pathname + "?" + createQueryString("count", newCount.toString()),
-              {
-                scroll: false,
-              }
-            );
             setCount(newCount);
           }}
         >
@@ -59,13 +43,6 @@ export default function QuantitySelector() {
           className="rounded-full p-1 disabled:bg-gray-500 hover:outline disabled:hover:outline-none"
           onClick={() => {
             const newCount = count + 1;
-
-            router.replace(
-              pathname + "?" + createQueryString("count", newCount.toString()),
-              {
-                scroll: false,
-              }
-            );
             setCount(newCount);
           }}
         >

@@ -6,6 +6,9 @@ import { useSearchParams } from "next/navigation";
 interface AddToCartButtonProps {
   product: any;
   fullProductList: any[];
+  selectedColor: string;
+  count: number;
+  selectedSize: string;
 }
 
 interface ColorMapEntry {
@@ -79,13 +82,12 @@ const colorMap: ColorsMap = {
 export const AddToCartButton = ({
   product,
   fullProductList,
+  selectedColor,
+  selectedSize,
+  count,
 }: AddToCartButtonProps) => {
   const shoppingCart = useShoppingCart();
-  const searchParams = useSearchParams();
   const productToAdd = () => {
-    const selectedSize = searchParams.get("size");
-    const selectedColor = colorMap[searchParams.get("color") as string];
-    const count = Number(searchParams.get("count"));
     const skuPrefix =
       product.metadata.sku_prefix === "BI"
         ? "BIN"
@@ -93,7 +95,7 @@ export const AddToCartButton = ({
     const constructedSku =
       skuPrefix +
       selectedSize?.toUpperCase() +
-      selectedColor.value +
+      selectedColor +
       product.metadata.sku_suffix;
     const filteredList = fullProductList.find((item) => {
       return item.metadata.sku.includes(constructedSku);

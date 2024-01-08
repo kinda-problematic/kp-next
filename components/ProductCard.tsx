@@ -78,9 +78,7 @@ export const ProductCard = ({
     .map((color: string) => colorMap[color]);
 
   return (
-    <Link
-      href={`/details/${product.id}?size=md&count=1&color=${availableColors[0].name}`}
-    >
+    <Link href={`/details/${product.id}`}>
       <Card
         key={product.id}
         className={

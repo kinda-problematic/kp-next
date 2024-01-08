@@ -1,6 +1,4 @@
 "use client";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useState } from "react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Bebas_Neue } from "next/font/google";
 
@@ -74,27 +72,15 @@ const colorMap: ColorsMap = {
   },
 };
 
-export default function ColorSelector({ colors }: { colors: string }) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const [availableColors, setAvailableColors] = useState(
-    colors.split(",").map((color: string) => colorMap[color])
-  );
-  const [selectedColor, setSelectedColor] = useState(
-    colorMap[searchParams.get("color") as string].value
-  );
-
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams);
-      params.set(name, value);
-
-      return params.toString();
-    },
-    [searchParams]
-  );
-
+export default function ColorSelector({
+  selectedColor,
+  setSelectedColor,
+  availableColors,
+}: {
+  selectedColor: string;
+  setSelectedColor: any;
+  availableColors: any[];
+}) {
   return (
     <div
       className={
@@ -116,12 +102,7 @@ export default function ColorSelector({ colors }: { colors: string }) {
             value={color.value}
             className={`${color.bg} rounded-full w-10 h-10 data-[state=on]:${color.bg} data-[state=on]:outline`}
             onClick={() => {
-              router.replace(
-                pathname + "?" + createQueryString("color", color.name),
-                {
-                  scroll: false,
-                }
-              );
+              setSelectedColor(color.value)
             }}
           ></ToggleGroupItem>
         ))}

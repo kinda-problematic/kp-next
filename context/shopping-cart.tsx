@@ -56,9 +56,13 @@ export const ShoppingCartProvider = ({
       localStorage.removeItem("shoppingCart");
     } else if (Array.isArray(item)) {
       // Remove all items in the array
-      const updatedCart = shoppingCart.filter(
-        (cartItem) => !item[0].id === cartItem.id
-      );
+      const updatedCart = shoppingCart.filter((cartItem) => {
+        if (item[0].id === cartItem.id) {
+          return;
+        } else {
+          return cartItem;
+        }
+      });
       setShoppingCart(updatedCart);
       setShoppingCartLength(updatedCart.length);
       localStorage.setItem("shoppingCart", JSON.stringify(updatedCart));

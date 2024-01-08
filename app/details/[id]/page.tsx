@@ -1,12 +1,8 @@
-import { AddToCartButton } from "@/components/AddToCartButton";
 import stripe from "@/config/stripe";
 import { formatToDecimal } from "@/lib/format-to-decimal";
 import { PhotoList } from "../components/PhotoList";
 import { bebas_neue } from "@/app/layout";
-import SizeSelector from "../components/SizeSelector";
-import QuantitySelector from "../components/QuantitySelector";
 import { Separator } from "@/components/ui/separator";
-import ColorSelector from "../components/ColorSelector";
 import {
   Accordion,
   AccordionContent,
@@ -14,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CLOTHING_CARE, CLOTHING_KEYS } from "@/constants/clothing-care";
+import ObjectActions from "../components/ObjectActions";
 
 interface DetailsProps {
   params: {
@@ -39,10 +36,26 @@ const getData = async (id: string) => {
 };
 
 const getFullProductList = async (productName: string) => {
-  const coercedName =
-    productName.toLowerCase() === "kp embroidered crewneck"
-      ? "kp unisex embroidered crewneck"
-      : productName;
+  const lowerCaseProductName = productName.toLowerCase();
+  let coercedName;
+
+  switch (lowerCaseProductName) {
+    case "kp embroidered crewneck":
+      coercedName = "kp unisex embroidered crewneck";
+      break;
+    case "kp shorts":
+      coercedName = "kp unisex shorts";
+      break;
+    case "kp joggers":
+      coercedName = "kp unisex joggers";
+      break;
+    case "iconic t-shirt":
+      coercedName = "iconic unisex t-shirt";
+      break;
+    default:
+      coercedName = productName;
+  }
+
   const products = await stripe.products.search({
     limit: 100,
     query: `active:'true' AND -metadata['floor_model']:'true' and name:"${coercedName}"`,
@@ -86,24 +99,7 @@ export default async function Details({ params }: DetailsProps) {
           {data.name}
         </h2>
         <Separator className="mb-4" />
-        <div className="flex flex-col space-y-4 items-center justify-center md:items-start">
-          <SizeSelector
-            sizes={data.metadata.sizes.split(",").filter((size: string) => {
-              if (
-                (data.name.includes("Anxious Queen") ||
-                  data.name.includes("Hot Mess")) &&
-                size === "xxl"
-              ) {
-                return;
-              } else if (size !== "xs") {
-                return size;
-              }
-            })}
-          />
-          <ColorSelector colors={data.metadata.colors} />
-          <QuantitySelector />
-          <AddToCartButton product={data} fullProductList={fullProductList} />
-        </div>
+        <ObjectActions item={data} fullProductList={fullProductList} />
         <div className="mt-4">
           {data.description}
           <ul className="list-disc ml-8">

@@ -6,22 +6,15 @@ import { Bebas_Neue } from "next/font/google";
 
 const bebas_neue = Bebas_Neue({ weight: ["400"], subsets: ["latin"] });
 
-export default function SizeSelector({ sizes }: { sizes: string[] }) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const [selectedSize, setSelectedSize] = useState(searchParams.get("size"));
-
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams);
-      params.set(name, value);
-
-      return params.toString();
-    },
-    [searchParams]
-  );
-
+export default function SizeSelector({
+  sizes,
+  selectedSize,
+  setSelectedSize,
+}: {
+  sizes: string[];
+  selectedSize: string;
+  setSelectedSize: any;
+}) {
   return (
     <div
       className={
@@ -34,9 +27,6 @@ export default function SizeSelector({ sizes }: { sizes: string[] }) {
         variant="outline"
         value={selectedSize as string}
         onValueChange={(value) => {
-          router.replace(pathname + "?" + createQueryString("size", value), {
-            scroll: false,
-          });
           if (value) {
             setSelectedSize(value);
           }
