@@ -84,12 +84,15 @@ export default function Footer() {
               Support
             </h6>
             <p className="mb-4">
-              <a href="/faqs" className="text-gray-600">
+              <a href="/faqs" className="text-gray-600 hover:underline">
                 FAQ
               </a>
             </p>
             <p className="mb-4">
-              <a href="/shipping-and-returns" className="text-gray-600">
+              <a
+                href="/shipping-and-returns"
+                className="text-gray-600 hover:underline"
+              >
                 Shipping & Returns
               </a>
             </p>
