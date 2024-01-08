@@ -117,7 +117,7 @@ export default async function Categories() {
         >
           All Categories
         </h2>
-        <div className="flex flex-col items-center justify-start md:flex-row md:justify-evenly md:w-full space-x-4">
+        <div className="flex flex-col items-center justify-start md:flex-row md:justify-evenly md:w-full md:space-x-4">
           {categoriesDescriptionsArray.map((e: CategoriesDescriptions) => (
             <Link
               href={e.href}
