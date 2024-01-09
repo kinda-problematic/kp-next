@@ -11,13 +11,18 @@ import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { track } from "@vercel/analytics/react";
+import Image from "next/image";
+import { Bebas_Neue } from "next/font/google";
+import { useState } from "react";
+import { SecurityBadge } from "./components/SecurityBadge";
+
+export const bebas_neue = Bebas_Neue({ weight: ["400"], subsets: ["latin"] });
 
 interface TableHeaderI {
   label: string;
@@ -45,6 +50,17 @@ function calculateSubtotal(shoppingCart: any[]): string {
   return subtotal.toFixed(2);
 }
 
+const discountCodes: any[] = [
+  {
+    name: "HOODIESZN",
+    discount: 0.85,
+  },
+  {
+    name: "KPDROP",
+    discount: 0.9,
+  },
+];
+
 export default function ShoppingCart() {
   const cartContext = useShoppingCart();
   const itemCounts = new Map();
@@ -60,10 +76,13 @@ export default function ShoppingCart() {
 
     return acc;
   }, []);
+  const [promoCode, setPromoCode] = useState("");
+  const [promoCodeApplied, setPromoCodesApplied] = useState([]);
+  const availablePromoCodes = ["HOODIESZN", "KPDROP"];
 
   return (
     <div className="py-20 flex flex-col items-center justify-start min-h-screen">
-      <h2 className={" text-6xl mb-4"}>Shopping Cart</h2>
+      <h2 className={" text-6xl mb-4 text-center"}>Shopping Cart</h2>
       {cartContext.shoppingCart.length === 0 ? (
         <div className="flex flex-col items-center justify-start min-h-screen">
           <div className="h-3/5 w-full flex flex-col justify-center items-center space-y-4">
@@ -98,20 +117,6 @@ export default function ShoppingCart() {
         <div className="w-full flex flex-col items-center px-4 md:px-36">
           <div className="flex flex-row space-x-4"></div>
           <Table className="text-black">
-            <TableCaption className="">
-              <Button>
-                <Link
-                  href="/checkout"
-                  onClick={() =>
-                    track("Checkout", {
-                      cart: JSON.stringify(cartContext.shoppingCart),
-                    })
-                  }
-                >
-                  Checkout
-                </Link>
-              </Button>
-            </TableCaption>
             <TableHeader>
               <TableRow>
                 {tableHeaders.map((item: any, i: any) => (
@@ -124,7 +129,16 @@ export default function ShoppingCart() {
                 return item ? (
                   <TableRow key={i}>
                     <TableCell className={`font-medium w-[400px]`}>
-                      {item.name}
+                      <span className="flex flex-col md:flex-row items-center md:space-x-4">
+                        <Image
+                          className="mr-4"
+                          src={item.images[0]}
+                          width={40}
+                          height={60}
+                          alt={`Photo of ${item.name}`}
+                        />
+                        {item.name}
+                      </span>
                     </TableCell>
                     <TableCell
                       className={`flex flex-col-reverse items-center justify-center space-y-1 md:flex-row md:justify-start md:items-center md:space-x-2 md:space-y-0 w-[200px]`}
@@ -199,6 +213,30 @@ export default function ShoppingCart() {
               </TableRow>
             </TableBody>
           </Table>
+          <div className="flex flex-col items-center">
+            <Button
+              className={
+                bebas_neue.className +
+                " p-8 bg-green-600 rounded-2xl text-3xl tracking-wider m-4"
+              }
+            >
+              <Link
+                href="/checkout"
+                onClick={() =>
+                  track("Checkout", {
+                    cart: JSON.stringify(cartContext.shoppingCart),
+                  })
+                }
+                className="new-shadow"
+              >
+                Checkout
+              </Link>
+            </Button>
+            <SecurityBadge />
+            <span className="text-center italic">
+              **Enjoy free shipping! US Only**
+            </span>
+          </div>
         </div>
       )}
     </div>

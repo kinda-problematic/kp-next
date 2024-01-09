@@ -1,8 +1,6 @@
 import { bebas_neue, dm_sans } from "@/app/layout";
 import { ProductCard } from "@/components/ProductCard";
 import stripe from "@/config/stripe";
-import Link from "next/link";
-import { Suspense } from "react";
 
 interface CollectionProps {
   params: {

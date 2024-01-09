@@ -89,7 +89,7 @@ export const ProductCard = ({
         <CardHeader className="mx-auto m-6 group-hover:hidden relative h-[310px] w-[210px]">
           <Image
             src={product.images[0]}
-            alt={product.name}
+            alt={`Picture of ${product.name}`}
             layout="fill"
             priority={true}
             sizes="(max-width: 210px)"
