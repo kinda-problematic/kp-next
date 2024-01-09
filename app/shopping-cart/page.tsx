@@ -22,7 +22,7 @@ import { Bebas_Neue } from "next/font/google";
 import { useState } from "react";
 import { SecurityBadge } from "./components/SecurityBadge";
 
-export const bebas_neue = Bebas_Neue({ weight: ["400"], subsets: ["latin"] });
+const bebas_neue = Bebas_Neue({ weight: ["400"], subsets: ["latin"] });
 
 interface TableHeaderI {
   label: string;
