@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://kindaproblematic.com/",
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 1,
+    },
+    {
       url: "https://kindaproblematic.com/categories",
       lastModified: new Date(),
       changeFrequency: "yearly",
