@@ -30,8 +30,7 @@ const categoriesDescriptionsArray: CategoriesDescriptionsArrayType = [
     footer:
       "Discover our versatile range of t-shirts. Perfect for any occasion, blending style and comfort effortlessly.",
     className: "backdrop-blur-sm bg-transparent hover:backdrop-blur-none",
-    bgImage:
-      "bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/landing_photos/ITM_COLLECTION.jpg')] bg-center bg-[length:650px_950px] hover:bg-[length:660px_960px]",
+    bgImage: `bg-[url('https://${process.env.AMAZON_S3_URL}/landing_photos/ITM_COLLECTION.jpg')] bg-center bg-[length:650px_950px] hover:bg-[length:660px_960px]`,
   },
   {
     href: "#hoodies-and-crewnecks",
@@ -40,8 +39,7 @@ const categoriesDescriptionsArray: CategoriesDescriptionsArrayType = [
     footer:
       "Embrace the chill with our cozy hoodies and crewnecks. Perfect for lounging or on-the-go style.",
     className: "backdrop-blur-sm bg-transparent hover:backdrop-blur-none",
-    bgImage:
-      "bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/landing_photos/KP_COLLECTION.jpg')] bg-center bg-[length:690px_990px] hover:bg-[length:700px_1000px]",
+    bgImage: `bg-[url('https://${process.env.AMAZON_S3_URL}/landing_photos/KP_COLLECTION.jpg')] bg-center bg-[length:690px_990px] hover:bg-[length:700px_1000px]`,
   },
   {
     href: "#shorts-and-pants",
@@ -51,7 +49,7 @@ const categoriesDescriptionsArray: CategoriesDescriptionsArrayType = [
       "From trendy shorts to functional pants, find your perfect fit for any occasion. Style and comfort in every step.",
     className: "backdrop-blur-sm bg-transparent hover:backdrop-blur-none",
     bgImage:
-      "bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/landing_photos/SM_COLLECTION2.jpeg')] bg-center bg-[length:690px_990px] hover:bg-[length:700px_1000px]",
+      `bg-[url('https://${process.env.AMAZON_S3_URL}/landing_photos/SM_COLLECTION2.jpeg')] bg-center bg-[length:690px_990px] hover:bg-[length:700px_1000px]`,
   },
 ];
 

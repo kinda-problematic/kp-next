@@ -35,7 +35,7 @@ export default async function Home() {
   return (
     <main className="bg-kpCharcoal py-2">
       <div
-        className={`min-h-screen flex flex-col items-center justify-start p-10 pt-0 text-black relative bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/ALL_GIRLS_SITTING.jpg')] bg-contain md:bg-center bg-top bg-no-repeat `}
+        className={`min-h-screen flex flex-col items-center justify-start p-10 pt-0 text-black relative bg-[url('https://${process.env.AMAZON_S3_URL}/ALL_GIRLS_SITTING.jpg')] bg-contain md:bg-center bg-top bg-no-repeat `}
       >
         <div className="p-2 mt-56 md:mt-0 max-w-7xl bg-black/80 text-white border-none backdrop-blur drop-shadow rounded-3xl flex flex-col justify-center items-center text-center animate-breathe">
           <h1

@@ -1,15 +1,21 @@
+import ClientImage from "@/components/ClientImage";
+
 export default function OurStory() {
+  const s3url = process.env.AMAZON_S3_URL;
+
   return (
     <div>
-      <div className="w-full bg-[url(https://kp-clopthing.s3.us-east-2.amazonaws.com/ABOUT_US_OUTSIDE.jpeg)] bg-contain bg-no-repeat h-[36vh] md:bg-cover md:h-[80vh]" />
+      <div
+        className={`w-full bg-[url(https://${s3url}/ABOUT_US_OUTSIDE.jpeg)] bg-contain bg-no-repeat h-[36vh] md:bg-cover md:h-[80vh]`}
+      />
       <div>
         <h2 className="border text-2xl bg-black text-white uppercase text-center rounded md:mt-4 py-2 mb-5">
           Our Story
         </h2>
         <div className="flex flex-col">
           <div className=" flex-col md:flex-row flex items-center justify-center md:mx-10 ">
-            <img
-              src="https://kp-clopthing.s3.us-east-2.amazonaws.com/KP_OWNER_PHOTO.jpg"
+            <ClientImage
+              src={`https://${process.env.AMAZON_S3_URL}/KP_OWNER_PHOTO.jpg`}
               className="flex flex-row w-80"
             />
             <div className=" flex-row flex justify-start items-center mx-10">
@@ -34,8 +40,8 @@ export default function OurStory() {
               of you in this whole wide world, and if you are human, Kinda
               Problematic is the standard – so dare to be you!
             </p>
-            <img
-              src="https://kp-clopthing.s3.us-east-2.amazonaws.com/KP_GIRLS_STANDING.jpg"
+            <ClientImage
+              src={`https://${process.env.AMAZON_S3_URL}/KP_GIRLS_STANDING.jpg`}
               className="flex flex-row w-80 mb-10 mt-3"
             />
           </div>

@@ -36,8 +36,7 @@ const collectionsDescriptionsArray: CollectionsDescriptionsArrayType = [
     footer:
       "Dive into our 'In the Mood' collection for eclectic and uplifting styles. Perfect for adding a spark of joy to your day.",
     className: "backdrop-blur-sm bg-transparent hover:backdrop-blur-none",
-    bgImage:
-      "bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/landing_photos/ITM_COLLECTION.jpg')] bg-center bg-[length:650px_950px] hover:bg-[length:660px_960px]",
+    bgImage: `bg-[url('https://${process.env.AMAZON_S3_URL}/landing_photos/ITM_COLLECTION.jpg')] bg-center bg-[length:650px_950px] hover:bg-[length:660px_960px]`,
   },
   {
     href: "#kinda-problematic",
@@ -46,8 +45,7 @@ const collectionsDescriptionsArray: CollectionsDescriptionsArrayType = [
     footer:
       "Our 'Kinda Problematic' collection is designed for the bold and the brave. Stand out with unique, daring designs.",
     className: "backdrop-blur-sm bg-transparent hover:backdrop-blur-none",
-    bgImage:
-      "bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/landing_photos/KP_COLLECTION.jpg')] bg-center bg-[length:690px_990px] hover:bg-[length:700px_1000px]",
+    bgImage: `bg-[url('https://${process.env.AMAZON_S3_URL}/landing_photos/KP_COLLECTION.jpg')] bg-center bg-[length:690px_990px] hover:bg-[length:700px_1000px]`,
   },
   {
     href: "#social-media",
@@ -56,8 +54,7 @@ const collectionsDescriptionsArray: CollectionsDescriptionsArrayType = [
     footer:
       "Our 'Social Media' collection offers trendy, eye-catching outfits that are sure to get likes both online and off. Be the trendsetter you are meant to be.",
     className: "backdrop-blur-sm bg-transparent hover:backdrop-blur-none",
-    bgImage:
-      "bg-[url('https://kp-clopthing.s3.us-east-2.amazonaws.com/landing_photos/SM_COLLECTION2.jpeg')] bg-center bg-[length:690px_990px] hover:bg-[length:700px_1000px]",
+    bgImage: `bg-[url('https://${process.env.AMAZON_S3_URL}/landing_photos/SM_COLLECTION2.jpeg')] bg-center bg-[length:690px_990px] hover:bg-[length:700px_1000px]`,
   },
 ];
 
