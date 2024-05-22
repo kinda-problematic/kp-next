@@ -193,3 +193,10 @@ export default async function Collections() {
     </div>
   );
 }
+
+const test = {
+  colors: "black",
+  inventory: "6",
+  size: "extra-extra-large",
+  sku: "YNMXXLBKTS-67",
+};
